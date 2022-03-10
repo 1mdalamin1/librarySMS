@@ -7,34 +7,32 @@
   <div>
     <div v-if="check_auth" class="auth">
       Auth part
-      <div id="nav">
-        <router-link :to="{ path: 'admin' }">admin</router-link> |
-        <router-link :to="{ path: 'student' }">student</router-link> |
-        <router-link :to="{ path: 'management' }">management</router-link>
-      </div>
+      <dashboard />
     </div>
     <div v-else class="non-auth">
-      Not auth Part
-      <div id="nav">
-        <router-link :to="{ path: 'login' }">Login</router-link> |
-        <router-link :to="{ path: 'signup' }">signup</router-link> |
-        <router-link :to="{ path: 'portfolio' }">Portfolio</router-link>
-      </div>
+      <!-- Not auth Part -->
+      <auth-layout />
+      
+      <!-- <router-view /> -->
     </div>
-    <router-view />
+
   </div>
 </template>
 <script>
+import dashboard from './views/backend/dashboard.vue'
+import AuthLayout from './views/frontend/authLayout.vue'
+// import authLayout from './views/frontend/authLayout.vue'
 export default {
+  components: { dashboard, AuthLayout },
   data() {
     return {
-      check_auth: true,
-      // check_auth: false,
+      // check_auth: true,
+      check_auth: false,
     }
   },
   created() {
     if(this.check_auth) {
-      this.$router.replace({ name: 'dashboard'})
+      this.$router.replace({ name: 'admin'})
     }else{
       this.$router.replace({ name: 'login'})
     }
