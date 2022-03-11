@@ -26,29 +26,31 @@
         />
       </div>
 
-      <!-- <div class="form-group d-none">
+    
+      <div class="form-group jd-none">
         <button
           type="button"
           class="btn btn-success m-1"
           @click.prevent="login(true, 'student')"
         >
-          student
+          Student
         </button>
         <button
           type="button"
           class="btn btn-success m-1"
           @click.prevent="login(true, 'admin')"
         >
-          admin
+          Admin
         </button>
         <button
           type="button"
           class="btn btn-success m-1"
           @click.prevent="login(true, 'management')"
         >
-          management
+          Management
         </button>
-      </div> -->
+      </div> 
+      
 
       <div class="form-row">
         <div class="col-sm-3">
@@ -73,38 +75,38 @@
 </template>
 
 <script>
-// import { mapMutations } from "vuex";
-// export default {
-//   created: function () {
-//     // window.axios.post('/user/test-data')
-//     //     .then(res=>{
-//     //         console.log(res)
-//     //     })
-//   },
+import { mapMutations } from "vuex";
+export default {
+  created: function () {
+    // window.axios.post('/user/test-data')
+    //     .then(res=>{
+    //         console.log(res)
+    //     })
+  },
 
-//   methods: {
-//     ...mapMutations([
-//       "set_auth_role_name",
-//       "set_check_auth_status",
-//       "set_auth_token",
-//       "set_auth_info",
-//     ]),
-//     // login: function(status, role_name){
-//     //     this.set_auth_role_name(role_name);
-//     //     this.set_check_auth_status(status);
-//     // },
-//     login_submit: function () {
-//       let form_data = new FormData(document.getElementById("login_form"));
-//       window.axios.post("/user/login", form_data).then((res) => {
-//         this.set_auth_token({ token: res.data.access_token });
-//         this.set_auth_info(res.data.user);
-//       });
-//       // .catch(err=>{
-//       //     console.log(err.response);
-//       // })
-//     },
-//   },
-// };
+  methods: {
+    ...mapMutations([
+      "set_auth_role_name",
+      "set_check_auth_status",
+      "set_auth_token",
+      "set_auth_info",
+    ]),
+    login: function(status, role_name){
+        this.set_auth_role_name(role_name);
+        this.set_check_auth_status(status);
+    },
+    // login_submit: function () {
+    //   let form_data = new FormData(document.getElementById("login_form"));
+    //   window.axios.post("/user/login", form_data).then((res) => {
+    //     this.set_auth_token({ token: res.data.access_token });
+    //     this.set_auth_info(res.data.user);
+    //   });
+    //   // .catch(err=>{
+    //   //     console.log(err.response);
+    //   // })
+    // },
+  },
+};
 </script>
 
 <style></style>

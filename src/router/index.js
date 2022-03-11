@@ -1,6 +1,12 @@
 import { createRouter, createWebHistory } from "vue-router";
 import dashboard from "../views/backend/dashboard.vue";
+
 import admin from "../views/backend/admin.vue";
+import adminLayout from "../views/backend/admin/adminLayout.vue";
+import bookEntry from "../views/backend/admin/bookEntry.vue";
+import bookList from "../views/backend/admin/bookList.vue";
+import users from "../views/backend/admin/users.vue";
+
 import student from "../views/backend/student.vue";
 import management from "../views/backend/management.vue";
 
@@ -19,9 +25,32 @@ const routes = [
   },
   {
     path: "/admin",
-    name: "admin",
-    component: admin,
+    component: adminLayout,
+    children: [
+      {
+        path: "/",
+        name: "admin",
+        component: admin,
+      },
+      {
+        path: "/users",
+        name: "userList",
+        component: users,
+      },
+      {
+        path: "/book-list",
+        name: "bookList",
+        component: bookList,
+      },
+      {
+        path: "/book-entry",
+        name: "bookEntry",
+        component: bookEntry,
+      },
+    ],
   },
+
+  
   {
     path: "/student",
     name: "student",
