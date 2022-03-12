@@ -5,10 +5,24 @@ import admin from "../views/backend/admin.vue";
 import adminLayout from "../views/backend/admin/adminLayout.vue";
 import bookEntry from "../views/backend/admin/bookEntry.vue";
 import bookList from "../views/backend/admin/bookList.vue";
+import entryList from "../views/backend/admin/entryList.vue";
+import newEntry from "../views/backend/admin/newEntry.vue";
+import adminProfile from "../views/backend/admin/profile.vue";
 import users from "../views/backend/admin/users.vue";
+// import userList from "../views/backend/admin/userList.vue";
 
 import student from "../views/backend/student.vue";
+import studentLayout from "../views/backend/student/studentLayout.vue";
+import studentBookList from "../views/backend/student/bookList.vue";
+import studentProfile from "../views/backend/student/studentProfile.vue";
+
+
 import management from "../views/backend/management.vue";
+import managementLayout from "../views/backend/management/managementLayout.vue";
+import managementBookList from "../views/backend/management/bookList.vue";
+import managementEntryList from "../views/backend/management/entryList.vue";
+import managementNewEntry from "../views/backend/management/newEntry.vue";
+import managementProfile from "../views/backend/management/profile.vue";
 
 import authLayout from "../views/frontend/authLayout";
 import login from "../views/frontend/login.vue";
@@ -28,24 +42,44 @@ const routes = [
     component: adminLayout,
     children: [
       {
-        path: "/",
+        path: "",
         name: "admin",
         component: admin,
       },
       {
-        path: "/users",
+        path: "users",
         name: "userList",
         component: users,
       },
       {
-        path: "/book-list",
+        path: "profile",
+        name: "adminProfile",
+        component: adminProfile,
+      },
+      {
+        path: "book-list",
         name: "bookList",
         component: bookList,
       },
       {
-        path: "/book-entry",
+        path: "book-entry",
         name: "bookEntry",
         component: bookEntry,
+      },
+      {
+        path: "book-edit/:id",
+        name: "bookEdit",
+        component: bookEntry,
+      },
+      {
+        path: "entry-list",
+        name: "entryList",
+        component: entryList,
+      },
+      {
+        path: "new-entry",
+        name: "newEntry",
+        component: newEntry,
       },
     ],
   },
@@ -53,13 +87,55 @@ const routes = [
   
   {
     path: "/student",
-    name: "student",
-    component: student,
+    component: studentLayout,
+    children: [
+      {
+        path: "",
+        name: "student",
+        component: student,
+      },
+      {
+        path: "profile",
+        name: "studentProfile",
+        component: studentProfile,
+      },
+      {
+        path: "book-list",
+        name: "studentBookList",
+        component: studentBookList,
+      },
+    ]
   },
   {
     path: "/management",
-    name: "management",
-    component: management,
+    component: managementLayout,
+    children: [
+      {
+        path: "",
+        name: "management",
+        component: management,
+      },
+      {
+        path: "book-list",
+        name: "managementBookList",
+        component: managementBookList,
+      },
+      {
+        path: "new-entry",
+        name: "managementNewEntry",
+        component: managementNewEntry,
+      },
+      {
+        path: "entry-list",
+        name: "managementEntryList",
+        component: managementEntryList,
+      },
+      {
+        path: "profile",
+        name: "managementProfile",
+        component: managementProfile,
+      },
+    ]
   },
   {
     path: "/auth",

@@ -24,9 +24,7 @@
       <h6 class="mt-3 f-12">Tanvir Md. Al-Amin</h6>
     </div>
     <ul class="sidebar-menu">
-        
-    <!-- <li v-if="get_auth_role_name == 'admin'"> -->
-    <li v-if="get_auth_role_name == 'admin'">
+      <li v-if="get_auth_role_name == 'admin'">
         <div class="sidebar-title">Admin</div>
         <a href="#" class="sidebar-header">
           <i class="icon-desktop"></i><span>Links</span>
@@ -34,15 +32,10 @@
         </a>
         <ul class="sidebar-submenu">
           <li>
-            <router-link :to="{ name: 'admin' }">
-              <i class="fa fa-angle-right"></i>Home
-            </router-link> 
-          </li>
-          <!-- <li>
             <router-link :to="{ name: 'adminProfile' }">
               <i class="fa fa-angle-right"></i>Home
             </router-link>
-          </li> -->
+          </li>
           <li>
             <router-link :to="{ name: 'userList' }">
               <i class="fa fa-angle-right"></i>Users
@@ -57,7 +50,53 @@
             <router-link :to="{ name: 'bookEntry' }">
               <i class="fa fa-angle-right"></i>Book Entry
             </router-link>
-          </li>  <!-- -->
+          </li>
+          <li>
+            <router-link :to="{ name: 'entryList' }">
+              <i class="fa fa-angle-right"></i>Entry List
+            </router-link>
+          </li>
+          <li>
+            <router-link :to="{ name: 'newEntry' }">
+              <i class="fa fa-angle-right"></i>New Entry
+            </router-link>
+          </li>
+        </ul>
+      </li>
+    <!-- <li v-if="get_auth_role_name == 'admin'"> -->
+    <!-- <li v-if="get_auth_role_name == 'admin'">
+        <div class="sidebar-title">Admin</div>
+        <a href="#" class="sidebar-header">
+          <i class="icon-desktop"></i><span>Links</span>
+          <i class="fa fa-angle-right pull-right"></i>
+        </a>
+        <ul class="sidebar-submenu">
+          <li>
+            <router-link :to="{ name: 'admin' }">
+              <i class="fa fa-angle-right"></i>Home
+            </router-link> 
+          </li> -->
+          <!-- <li>
+            <router-link :to="{ name: 'adminProfile' }">
+              <i class="fa fa-angle-right"></i>Home
+            </router-link>
+          </li> -->
+         <!--
+          <li>
+            <router-link :to="{ name: 'userList' }">
+              <i class="fa fa-angle-right"></i>Users
+            </router-link>
+          </li>
+          <li>
+            <router-link :to="{ name: 'bookList' }">
+              <i class="fa fa-angle-right"></i>Book List
+            </router-link>
+          </li>
+          <li>
+            <router-link :to="{ name: 'bookEntry' }">
+              <i class="fa fa-angle-right"></i>Book Entry
+            </router-link>
+          </li>   -->
           <!--
           <li>
             <router-link :to="{ name: 'entryList' }">
@@ -69,10 +108,10 @@
               <i class="fa fa-angle-right"></i>New Entry
             </router-link>
           </li>
-          -->
+          
         </ul>
       </li>
-        
+         -->
       <!-- <li v-if="get_auth_role_name == 'student'"> -->
       <li v-if="get_auth_role_name == 'student'">
         <div class="sidebar-title">Student</div>
@@ -81,8 +120,12 @@
           <i class="fa fa-angle-right pull-right"></i>
         </a>
         <ul class="sidebar-submenu">
-          <li><router-link :to="{ path: 'student' }"><i class="fa fa-angle-right"></i>Profile</router-link></li>
-        <!--  <li>
+          <li>
+            <router-link :to="{ path: 'studentProfile' }">
+              <i class="fa fa-angle-right"></i>Profile
+            </router-link>
+          </li>
+         <li>
             <router-link :to="{ name: 'studentProfile' }">
               <i class="fa fa-angle-right"></i>Profile
             </router-link>
@@ -91,7 +134,7 @@
             <router-link :to="{ name: 'studentBookList' }">
               <i class="fa fa-angle-right"></i>Book List
             </router-link>
-          </li> -->
+          </li>
         </ul> 
       </li>
       <!-- <li v-if="get_auth_role_name == 'management'"> -->
@@ -102,8 +145,8 @@
           <i class="fa fa-angle-right pull-right"></i>
         </a>
         <ul class="sidebar-submenu">
-          <li><router-link :to="{ path: 'management' }">management</router-link></li>
-          <!-- <li>
+          <!-- <li><router-link :to="{ path: 'management' }">management</router-link></li> -->
+          <li>
             <router-link :to="{ name: 'managementProfile' }">
               <i class="fa fa-angle-right"></i>Profile
             </router-link>
@@ -116,7 +159,7 @@
             <router-link :to="{ name: 'managementNewEntry' }">
               <i class="fa fa-angle-right"></i>New Entry
             </router-link>
-          </li> -->
+          </li>
         </ul>
       </li>
       
