@@ -77,15 +77,23 @@ export default {
       if (this.url === "/book-list/update") {
         form_data.append("id", this.id);
       }
-      window.axios
-        .post(this.url, form_data)
-        .then((res) => {
+      window.axios.post(this.url, form_data)
+        .then(res=>{
           console.log(res.data);
-          this.$router.push({ name: "bookList" });
+          this.$router.push({ name: "bookList" }); // go to BookList page
         })
-        .catch((err) => {
+        .catch(err=>{
           console.log(err.response);
-        });
+        })
+      // window.axios
+      //   .post(this.url, form_data)
+      //   .then((res) => {
+      //     console.log(res.data);
+      //     this.$router.push({ name: "bookList" });
+      //   })
+        // .catch((err) => {
+        //   console.log(err.response);
+        // });
     },
   },
   computed: {
@@ -93,3 +101,8 @@ export default {
   },
 };
 </script>
+<style >
+.card-body{
+  text-align: left;
+}
+</style>

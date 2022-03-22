@@ -60,38 +60,38 @@
 </template>
 
 <script>
-// import { mapMutations } from "vuex";
-// export default {
-//   methods: {
-//     ...mapMutations(["set_auth_token", "set_auth_info"]),
-//     forget_submit: function () {
-//       let form_data = new FormData(document.getElementById("signup_form"));
+import { mapMutations } from "vuex";
+export default {
+  methods: {
+    ...mapMutations(["set_auth_token", "set_auth_info"]),
+    forget_submit: function () {
+      let form_data = new FormData(document.getElementById("signup_form"));
 
-//       window.axios.post("/user/forget-password", form_data).then((res) => {
-//         console.log(res.data);
-//         window.alert("a mail has been sent to your email");
-//       });
-//       // .catch((err)=>{
-//       //     console.log(err);
-//       // })
-//     },
-//     token_submit: function () {
-//       let form_data = new FormData(document.getElementById("token_form"));
+      window.axios.post("/user/forget-password", form_data).then((res) => {
+        console.log(res.data);
+        window.alert("a mail has been sent to your email");
+      });
+      // .catch((err)=>{
+      //     console.log(err);
+      // })
+    },
+    token_submit: function () {
+      let form_data = new FormData(document.getElementById("token_form"));
 
-//       window.axios.post("/user/forget-token", form_data).then((res) => {
-//         console.log(res.data);
-//         document.getElementById("token_form").reset();
-//         window.alert(
-//           "please check your email . soon you will recive a password."
-//         );
-//         this.$router.replace({ name: "login" });
-//       });
-//       // .catch((err)=>{
-//       //     console.log(err);
-//       // })
-//     },
-//   },
-// };
+      window.axios.post("/user/forget-token", form_data).then((res) => {
+        console.log(res.data);
+        document.getElementById("token_form").reset();
+        window.alert(
+          "please check your email . soon you will recive a password."
+        );
+        this.$router.replace({ name: "login" });
+      });
+      // .catch((err)=>{
+      //     console.log(err);
+      // })
+    },
+  },
+};
 </script>
 
 <style></style>

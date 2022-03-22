@@ -410,4 +410,16 @@ export default {
         font-size: 18px;
         line-height: 36px;
     }
+    ul.custom_ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul.custom_ul li {
+    width: 50%;
+    text-align: left;
+}
+    .single-funfact h4 {
+    color: #fff !important;
+}
 </style>

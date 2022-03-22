@@ -2,7 +2,7 @@
   <div class="page-sidebar custom-scrollbar">
     <div class="sidebar-user text-center">
       <div>
-        <!-- <img
+        <img
           v-if="get_auth_info.image"
           alt=""
           class="img-50 rounded-circle"
@@ -13,15 +13,11 @@
           class="img-50 rounded-circle"
           src="/assets/images/user/1.jpg"
           alt="#"
-        />-->
-        <img
-          class="img-50 rounded-circle"
-          src="/assets/images/user/1.jpg"
-          alt="#"
         />
+        
       </div>
-      <!-- <h6 class="mt-3 f-12">{{ get_auth_info.username }}</h6> -->
-      <h6 class="mt-3 f-12">Tanvir Md. Al-Amin</h6>
+      <h6 class="mt-3 f-12">{{ get_auth_info.username }}</h6>
+      <!-- <h6 class="mt-3 f-12">Tanvir Md. Al-Amin</h6> -->
     </div>
     <ul class="sidebar-menu">
       <li v-if="get_auth_role_name == 'admin'">
@@ -120,11 +116,11 @@
           <i class="fa fa-angle-right pull-right"></i>
         </a>
         <ul class="sidebar-submenu">
-          <li>
+          <!-- <li>
             <router-link :to="{ path: 'studentProfile' }">
               <i class="fa fa-angle-right"></i>Profile
             </router-link>
-          </li>
+          </li> -->
          <li>
             <router-link :to="{ name: 'studentProfile' }">
               <i class="fa fa-angle-right"></i>Profile
@@ -186,9 +182,9 @@ export default {
   methods: {
     ...mapMutations(["set_logout"]),
     get_logout: function () {
-      // window.axios.get("/user/logout").then((res) => {
-      //   console.log(res.data);
-      // });
+      window.axios.get("/user/logout").then((res) => {
+        console.log(res.data);
+      });
       this.$router.replace({ name: "login" });
       this.set_logout();
     },

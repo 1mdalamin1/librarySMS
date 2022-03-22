@@ -43,7 +43,7 @@
                 <div class="col-md-6">
                   <div class="ttl-info text-left">
                     <h6><i class="fa fa-calendar"></i>&nbsp;&nbsp;&nbsp;BOD</h6>
-                    <span>02 January 1988</span>
+                    <span>06 December 1991</span>
                   </div>
                 </div>
               </div>
@@ -65,7 +65,7 @@
                     <h6>
                       <i class="fa fa-phone"></i>&nbsp;&nbsp;&nbsp;Contact Us
                     </h6>
-                    <span>India +91 123-456-7890</span>
+                    <span>BD +880 179-581-5660</span>
                   </div>
                 </div>
                 <div class="col-md-6">
@@ -74,7 +74,7 @@
                       <i class="fa fa-location-arrow"></i
                       >&nbsp;&nbsp;&nbsp;Location
                     </h6>
-                    <span>B69 Near Schoool Demo Home</span>
+                    <span>SBG Schoool Demo Home</span>
                   </div>
                 </div>
               </div>
@@ -103,11 +103,11 @@
           <div class="follow">
             <div class="row">
               <div class="col-6 text-md-right border-right">
-                <div class="follow-num counter">25869</div>
+                <div class="follow-num counter">564.505</div>
                 <span>Follower</span>
               </div>
               <div class="col-6 text-md-left">
-                <div class="follow-num counter">659887</div>
+                <div class="follow-num counter">0.9531805</div>
                 <span>Following</span>
               </div>
             </div>

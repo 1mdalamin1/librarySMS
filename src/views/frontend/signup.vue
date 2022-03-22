@@ -12,7 +12,7 @@
           type="text"
           name="name"
           class="form-control"
-          placeholder="mr.karim"
+          placeholder="tanvir"
         />
       </div>
       <div class="form-group">
@@ -60,24 +60,28 @@
 </template>
 
 <script>
-// import { mapMutations } from "vuex";
-// export default {
-//   methods: {
-//     ...mapMutations(["set_auth_token", "set_auth_info"]),
-//     signup_submit: function () {
-//       let form_data = new FormData(document.getElementById("signup_form"));
+import { mapMutations } from "vuex";
+export default {
+  methods: {
+    ...mapMutations(["set_auth_token", "set_auth_info"]),
+    signup_submit: function () {
+      let form_data = new FormData(document.getElementById("signup_form"));
 
-//       window.axios.post("/user/register", form_data).then((res) => {
-//         console.log(res.data);
-//         this.set_auth_token({ token: res.data.access_token });
-//         this.set_auth_info(res.data.user);
-//       });
-//       // .catch((err)=>{
-//       //     console.log(err);
-//       // })
-//     },
-//   },
-// };
+      window.axios.post("/user/register", form_data).then((res) => {
+        console.log(res.data);
+        this.set_auth_token({ token: res.data.access_token });
+        this.set_auth_info(res.data.user);
+      })
+      .catch((err)=>{
+          console.log(err.response);
+      })
+    },
+  },
+};
 </script>
 
-<style></style>
+<style>
+form#signup_form {
+    text-align: left;
+}
+</style>

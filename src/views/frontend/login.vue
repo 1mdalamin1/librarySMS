@@ -5,15 +5,15 @@
     Enter your Username and Password For Login or Signup
   </h6>
   <div class="card mt-4 p-4">
-    <!-- <form class="theme-form" id="login_form" @submit.prevent="login_submit"> -->
-    <form class="theme-form" id="login_form" >
+    <form class="theme-form" id="login_form" @submit.prevent="login_submit">
+    <!-- <form class="theme-form" id="login_form" > -->
       <div class="form-group">
         <label class="col-form-label">Email</label>
         <input
           type="text"
           name="email"
           class="form-control"
-          placeholder="John Deo"
+          placeholder="superadmin@gmail.com"
         />
       </div>
       <div class="form-group">
@@ -22,12 +22,12 @@
           type="password"
           name="password"
           class="form-control"
-          placeholder="**********"
+          placeholder="12345678"
         />
       </div>
 
     
-      <div class="form-group jd-none">
+      <div class="form-group d-none">
         <button
           type="button"
           class="btn btn-success m-1"
@@ -64,8 +64,8 @@
           <br />
           <div class="text-left mt-2 m-l-20">
             Forget Password??
-            <router-link :to="{ name: 'signup' }">Click here</router-link>
-            <!-- <router-link :to="{ name: 'forget' }">Click here</router-link> -->
+            <!-- <router-link :to="{ name: 'signup' }">Click here</router-link> -->
+            <router-link :to="{ name: 'forget' }">Click here</router-link>
           </div>
         </div>
       </div>
@@ -95,18 +95,24 @@ export default {
         this.set_auth_role_name(role_name);
         this.set_check_auth_status(status);
     },
-    // login_submit: function () {
-    //   let form_data = new FormData(document.getElementById("login_form"));
-    //   window.axios.post("/user/login", form_data).then((res) => {
-    //     this.set_auth_token({ token: res.data.access_token });
-    //     this.set_auth_info(res.data.user);
-    //   });
-    //   // .catch(err=>{
-    //   //     console.log(err.response);
-    //   // })
-    // },
+    login_submit: function () {
+      let form_data = new FormData(document.getElementById("login_form"));
+      window.axios.post("/user/login", form_data).then((res) => {
+        this.set_auth_token({ token: res.data.access_token });
+        this.set_auth_info(res.data.user);
+        // localStorage.setItem('b_token', res.data.user.access_token);
+          // console.log(res.data);
+      })
+      .catch(err=>{
+          console.log(err.response);
+      })
+    },
   },
 };
 </script>
 
-<style></style>
+<style>
+form#login_form {
+    text-align: left;
+}
+</style>

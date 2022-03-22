@@ -70,7 +70,7 @@
 			return {
 				myValue: "",
 				myBooksValue: "",
-				// myOptions: ["op1", "op2", "op3"],
+				// myOptions: [{id: 1, text:'name 1'}, {id: 2, text:'name 2'}, {id: 3, text:'name 3'}],
 				myOptions: [],
 				book_list_option: [],
                 time:'',
@@ -86,6 +86,7 @@
                 window.axios.get('/user/user-list-for-select2')
                     .then(res=>{
                         this.myOptions = res.data;
+						// console.log(res.data);
                     })
                 window.axios.get('/book-list/book-list-for-select2')
                     .then(res=>{

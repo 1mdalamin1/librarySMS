@@ -35,7 +35,7 @@ export default {
         .then((res) => {
             console.log(res.data);
             this.entry = res.data;
-        });
+        }); 
     }
 }
 </script>
